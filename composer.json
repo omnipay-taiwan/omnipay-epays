@@ -17,7 +17,8 @@
     ],
     "require": {
         "omnipay/common": "^3.0",
-        "symfony/http-client": "^6.4"
+        "symfony/http-client": "^6.4",
+        "phpseclib/phpseclib": "^3.0"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
