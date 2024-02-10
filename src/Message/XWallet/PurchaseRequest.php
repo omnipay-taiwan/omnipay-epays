@@ -93,5 +93,11 @@ class PurchaseRequest extends AbstractRequest
 
     public function sendData($data)
     {
+        $data = json_encode($data);
+        $HashKey = $this->getHashKey();
+        $HashIv = substr($this->getHashIV(), 0, 16);
+        $hash = openssl_encrypt($data, 'aes-256-cbc', $HashKey, OPENSSL_RAW_DATA, $HashIv);
+        $str = base64_encode($hash);
+        var_dump($str === 'u4OlyM8T0QFQPQkL8XhzfxH5QVFmVcYqUW+hXuic5a+y9cIjEY8qr3gOoIUmOZLufZtW/3fDRNP2yQAR2kt4Uaqpq24cR9GTgQBXg5eZDjEzsv4hCE+vXqHdQeNBOe+R');
     }
 }

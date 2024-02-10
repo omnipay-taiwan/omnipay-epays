@@ -34,4 +34,18 @@ class PurchaseRequestTest extends TestCase
             'Mobile' => '0912345678',
         ], $request->getData());
     }
+
+    public function testSendData()
+    {
+        $options = [
+            'transactionId' => 'test202309011123001',
+            'amount' => 100,
+            'PayType' => 1,
+            'Mobile' => '0912345678',
+        ];
+        $request = new PurchaseRequest($this->getHttpClient(), $this->getHttpRequest());
+        $request->initialize(array_merge($this->initialize, $options));
+
+        $response = $request->send();
+    }
 }
