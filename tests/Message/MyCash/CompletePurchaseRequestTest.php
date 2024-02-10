@@ -1,9 +1,9 @@
 <?php
 
-namespace Omnipay\ePays\Tests\Message;
+namespace Omnipay\ePays\Tests\Message\MyCash;
 
 use Omnipay\Common\Exception\InvalidRequestException;
-use Omnipay\ePays\Message\CompletePurchaseRequest;
+use Omnipay\ePays\Message\MyCash\CompletePurchaseRequest;
 use Omnipay\Tests\TestCase;
 
 class CompletePurchaseRequestTest extends TestCase

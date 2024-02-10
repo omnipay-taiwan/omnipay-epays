@@ -1,10 +1,10 @@
 <?php
 
-namespace Omnipay\ePays\Traits;
+namespace Omnipay\ePays\Traits\MyCash;
 
 use Omnipay\ePays\Hasher;
 
-trait HasEpays
+trait HasMyCash
 {
     public function getHashKey()
     {

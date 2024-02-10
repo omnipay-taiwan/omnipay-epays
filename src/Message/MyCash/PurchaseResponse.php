@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\ePays\Message;
+namespace Omnipay\ePays\Message\MyCash;
 
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RedirectResponseInterface;

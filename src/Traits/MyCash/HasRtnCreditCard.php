@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\ePays\Traits;
+namespace Omnipay\ePays\Traits\MyCash;
 
 trait HasRtnCreditCard
 {

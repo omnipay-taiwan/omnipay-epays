@@ -3,19 +3,19 @@
 namespace Omnipay\ePays\Tests;
 
 use Omnipay\Common\Message\NotificationInterface;
-use Omnipay\ePays\Gateway;
+use Omnipay\ePays\MyCashGateway;
 use Omnipay\Tests\GatewayTestCase;
 
-class GatewayTest extends GatewayTestCase
+class MyCashGatewayTest extends GatewayTestCase
 {
-    /** @var Gateway */
+    /** @var MyCashGateway */
     protected $gateway;
 
     public function setUp(): void
     {
         parent::setUp();
 
-        $this->gateway = new Gateway($this->getHttpClient(), $this->getHttpRequest());
+        $this->gateway = new MyCashGateway($this->getHttpClient(), $this->getHttpRequest());
         $this->gateway->initialize([
             'HashKey' => 'FEFRGFEFWEF',
             'HashIV' => 'v77hoKGq4kWxNNIS',
