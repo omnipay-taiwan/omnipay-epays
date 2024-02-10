@@ -3,6 +3,7 @@
 namespace Omnipay\ePays\Tests\Message\XWallet;
 
 use Omnipay\Common\Exception\InvalidRequestException;
+use Omnipay\Common\Message\RedirectResponseInterface;
 use Omnipay\ePays\Message\XWallet\PurchaseRequest;
 use Omnipay\Tests\TestCase;
 
@@ -11,6 +12,7 @@ class PurchaseRequestTest extends TestCase
     private $initialize = [
         'HashKey' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
         'HashIV' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        'testMode' => '1',
     ];
 
     /**
@@ -46,6 +48,14 @@ class PurchaseRequestTest extends TestCase
         $request = new PurchaseRequest($this->getHttpClient(), $this->getHttpRequest());
         $request->initialize(array_merge($this->initialize, $options));
 
+        /** @var RedirectResponseInterface $response */
         $response = $request->send();
+
+        self::assertEquals('http://xpop-test.epays.com.tw/api/o/new', $response->getRedirectUrl());
+        self::assertEquals('POST', $response->getRedirectMethod());
+        self::assertEquals([
+            "Hashkey" => "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            "data" => "u4OlyM8T0QFQPQkL8XhzfxH5QVFmVcYqUW+hXuic5a+y9cIjEY8qr3gOoIUmOZLufZtW/3fDRNP2yQAR2kt4Uaqpq24cR9GTgQBXg5eZDjEzsv4hCE+vXqHdQeNBOe+R",
+        ], $response->getRedirectData());
     }
 }

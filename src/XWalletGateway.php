@@ -23,6 +23,7 @@ class XWalletGateway extends AbstractGateway
         return [
             'HashKey' => '',
             'HashIV' => '',
+            'testMode' => false,
         ];
     }
 

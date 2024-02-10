@@ -100,6 +100,10 @@ class PurchaseRequest extends AbstractRequest
     public function sendData($data)
     {
         $encryptor = new Encryptor($this->getHashKey(), $this->getHashIV());
-        var_dump($encryptor->encrypt($data));
+
+        return new PurchaseResponse($this, [
+            'Hashkey' => $this->getHashKey(),
+            'data' => $encryptor->encrypt($data),
+        ]);
     }
 }
