@@ -43,4 +43,11 @@ class Encryptor
             'Key of size '.$length.' not supported by this algorithm. Only keys of sizes 128, 192 or 256 supported'
         );
     }
+
+    public function decrypt($plainText)
+    {
+        return json_decode($this->cipher->decrypt(
+            base64_decode($plainText)
+        ), true);
+    }
 }

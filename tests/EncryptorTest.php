@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
 class EncryptorTest extends TestCase
 {
     private $key = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
     private $iv = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
     public function testEncrypt()
@@ -26,6 +27,20 @@ class EncryptorTest extends TestCase
         self::assertEquals($this->opensslEncrypt($data), $encryptor->encrypt($data));
     }
 
+    public function testDecrypt()
+    {
+        $data = 'u4OlyM8T0QFQPQkL8XhzfzbRQgoPeJauC/hntXPi7Mt2koLqMbjzRbOCOWOwkIgDYTyGgtCrigF0yJ9vP0eKYPjwQUspyhVKdUK6+RVTBE4aBX998OOJ+zwxO0c8f5ZJ';
+
+        $encryptor = new Encryptor($this->key, $this->iv);
+
+        self::assertEquals([
+            'FirmOrderNo' => 'test202308301722001',
+            'o_PayNo' => '460199********8103',
+            'o_PriceReal' => 100,
+        ], $encryptor->decrypt($data));
+        self::assertEquals($this->opensslDecrypt($data), $encryptor->decrypt($data));
+    }
+
     private function opensslEncrypt($data)
     {
         $data = json_encode($data);
@@ -33,5 +48,17 @@ class EncryptorTest extends TestCase
         $hash = openssl_encrypt($data, 'aes-256-cbc', $this->key, OPENSSL_RAW_DATA, $HashIv);
 
         return base64_encode($hash);
+    }
+
+    /**
+     * @return mixed
+     */
+    private function opensslDecrypt(string $data)
+    {
+        $HashIv = substr($this->iv, 0, 16);
+        $str = base64_decode($data);
+        $str = openssl_decrypt($str, 'aes-256-cbc', $this->key, OPENSSL_RAW_DATA, $HashIv);
+
+        return json_decode($str, true);
     }
 }

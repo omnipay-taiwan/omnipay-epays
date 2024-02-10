@@ -17,14 +17,12 @@
     ],
     "require": {
         "omnipay/common": "^3.0",
-        "symfony/http-client": "^6.4",
         "phpseclib/phpseclib": "^3.0"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
         "omnipay/tests": "^3.0|^4.0",
-        "squizlabs/php_codesniffer": "^3",
-        "http-interop/http-factory-guzzle": "^1.2"
+        "squizlabs/php_codesniffer": "^3"
     },
     "autoload": {
         "psr-4": {
@@ -50,7 +48,7 @@
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
-            "php-http/discovery": true
+            "php-http/discovery": false
         }
     }
 }

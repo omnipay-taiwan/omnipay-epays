@@ -12,6 +12,7 @@ class PurchaseRequest extends AbstractRequest
 
     /**
      * 特店訂單編號
+     *
      * @param  string  $value
      */
     public function setFirmOrderNo($value)
@@ -29,6 +30,7 @@ class PurchaseRequest extends AbstractRequest
 
     /**
      * 支付方式 1：信用卡2、虛擬
+     *
      * @param  int  $value
      */
     public function setPayType($value)
@@ -46,6 +48,7 @@ class PurchaseRequest extends AbstractRequest
 
     /**
      * 金額
+     *
      * @param  int  $value
      */
     public function setPrice($value)
@@ -55,6 +58,7 @@ class PurchaseRequest extends AbstractRequest
 
     /**
      * @return string
+     *
      * @throws InvalidRequestException
      */
     public function getPrice()
@@ -64,6 +68,7 @@ class PurchaseRequest extends AbstractRequest
 
     /**
      * 消費者手機
+     *
      * @param  string  $value
      */
     public function setMobile($value)
