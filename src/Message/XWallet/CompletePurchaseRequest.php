@@ -2,6 +2,7 @@
 
 namespace Omnipay\ePays\Message\XWallet;
 
+use Omnipay\ePays\Encryptor;
 use Omnipay\ePays\Traits\XWallet\HasEPays;
 
 class CompletePurchaseRequest extends AbstractRequest
@@ -15,5 +16,9 @@ class CompletePurchaseRequest extends AbstractRequest
 
     public function sendData($data)
     {
+        $encryptor = new Encryptor($this->getHashKey(), $this->getHashIV());
+        $data['data'] = $encryptor->decrypt($data['data']);
+
+        return new CompletePurchaseResponse($this, $data);
     }
 }
