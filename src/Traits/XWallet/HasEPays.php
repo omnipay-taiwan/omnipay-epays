@@ -2,7 +2,7 @@
 
 namespace Omnipay\ePays\Traits\XWallet;
 
-trait HasEPay
+trait HasEPays
 {
     public function getHashKey()
     {

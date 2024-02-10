@@ -4,14 +4,14 @@ namespace Omnipay\ePays;
 
 use Omnipay\Common\AbstractGateway;
 use Omnipay\ePays\Message\XWallet\PurchaseRequest;
-use Omnipay\ePays\Traits\XWallet\HasEPay;
+use Omnipay\ePays\Traits\XWallet\HasEPays;
 
 /**
  * MyCash Gateway
  */
 class XWalletGateway extends AbstractGateway
 {
-    use HasEPay;
+    use HasEPays;
 
     public function getName(): string
     {
