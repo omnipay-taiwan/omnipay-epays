@@ -3,6 +3,7 @@
 namespace Omnipay\ePays;
 
 use Omnipay\Common\AbstractGateway;
+use Omnipay\ePays\Message\XWallet\CompletePurchaseRequest;
 use Omnipay\ePays\Message\XWallet\PurchaseRequest;
 use Omnipay\ePays\Traits\XWallet\HasEPays;
 
@@ -30,5 +31,10 @@ class XWalletGateway extends AbstractGateway
     public function purchase(array $options = [])
     {
         return $this->createRequest(PurchaseRequest::class, $options);
+    }
+
+    public function completePurchase(array $options = [])
+    {
+        return $this->createRequest(CompletePurchaseRequest::class, $options);
     }
 }
