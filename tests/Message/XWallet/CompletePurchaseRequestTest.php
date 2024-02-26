@@ -17,16 +17,16 @@ class CompletePurchaseRequestTest extends TestCase
     public function testGetData(): void
     {
         $encryptor = new Encryptor($this->initialize['HashKey'], $this->initialize['HashIV']);
-        $data = $encryptor->encrypt([
+        $data = [
             'FirmOrderNo' => 'test202309011123001',
             'PayNo' => '460199********8103',
             'PriceReal' => 100,
-        ]);
+        ];
         $httpRequest = new HttpRequest([], [], [], [], [], [], json_encode([
             'state' => '1',
             'code' => '200',
             'msg' => '交易成功',
-            'data' => $data,
+            'data' => $encryptor->encrypt($data),
         ]));
         $httpRequest->setMethod('POST');
         $request = new CompletePurchaseRequest($this->getHttpClient(), $httpRequest);

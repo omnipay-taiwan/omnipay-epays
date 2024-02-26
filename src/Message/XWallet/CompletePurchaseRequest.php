@@ -11,14 +11,15 @@ class CompletePurchaseRequest extends AbstractRequest
 
     public function getData()
     {
-        return json_decode($this->httpRequest->getContent(), true);
+        $data = json_decode($this->httpRequest->getContent(), true);
+        $encryptor = new Encryptor($this->getHashKey(), $this->getHashIV());
+        $data['data'] = $encryptor->decrypt($data['data']);
+
+        return $data;
     }
 
     public function sendData($data)
     {
-        $encryptor = new Encryptor($this->getHashKey(), $this->getHashIV());
-        $data['data'] = $encryptor->decrypt($data['data']);
-
         return new CompletePurchaseResponse($this, $data);
     }
 }
