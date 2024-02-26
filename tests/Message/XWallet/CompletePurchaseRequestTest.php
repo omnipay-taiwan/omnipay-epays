@@ -2,6 +2,7 @@
 
 namespace Omnipay\EPays\Tests\Message\XWallet;
 
+use Omnipay\Common\Exception\InvalidResponseException;
 use Omnipay\EPays\Encryptor;
 use Omnipay\EPays\Message\XWallet\CompletePurchaseRequest;
 use Omnipay\Tests\TestCase;
@@ -64,5 +65,22 @@ class CompletePurchaseRequestTest extends TestCase
         self::assertEquals('交易成功', $response->getMessage());
         self::assertEquals('200', $response->getCode());
         self::assertEquals('test202309011123001', $response->getTransactionId());
+    }
+
+    public function testDecryptFailed()
+    {
+        $this->expectException(InvalidResponseException::class);
+
+        $httpRequest = new HttpRequest([], [], [], [], [], [], json_encode([
+            'state' => 1,
+            'code' => 200,
+            'msg' => '交易成功',
+            'data' => 'fake data',
+        ]));
+        $httpRequest->setMethod('POST');
+        $request = new CompletePurchaseRequest($this->getHttpClient(), $httpRequest);
+        $request->initialize(array_merge($this->initialize, []));
+
+        $request->send();
     }
 }
