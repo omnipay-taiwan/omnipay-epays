@@ -52,12 +52,14 @@ trait HasMyCash
     private function makeHash(array $data)
     {
         $hasher = new Hasher($this->getHashKey(), $this->getValidateKey());
+        $lookup = ['RtnCode' => 'RtnCode', 'TradeID' => 'MerTradeID', 'UserID' => 'MerUserID', 'Money' => 'Amount'];
+        $result = [];
+        foreach ($lookup as $from => $to) {
+            if (array_key_exists($to, $data)) {
+                $result[$from] = $data[$to];
+            }
+        }
 
-        return $hasher->make([
-            'RtnCode' => $data['RtnCode'],
-            'TradeID' => $data['MerTradeID'],
-            'UserID' => $data['MerUserID'],
-            'Money' => $data['Amount'],
-        ]);
+        return $hasher->make($result);
     }
 }

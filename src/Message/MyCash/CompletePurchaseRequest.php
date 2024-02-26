@@ -18,7 +18,7 @@ class CompletePurchaseRequest extends AbstractRequest
     public function getData()
     {
         $data = $this->httpRequest->request->all();
-        $validate = $data['Validate'];
+        $validate = array_key_exists('Validate', $data) ? $data['Validate'] : '';
 
         if ($this->makeHash($data) !== $validate) {
             throw new InvalidRequestException('Incorrect hash');

@@ -19,11 +19,12 @@ class Hasher
         $columns = [
             'ValidateKey' => $this->validateKey,
             'HashKey' => $this->hashKey,
-            'RtnCode' => $data['RtnCode'],
-            'TradeID' => $data['TradeID'],
-            'UserID' => $data['UserID'],
-            'Money' => $data['Money'],
         ];
+        foreach (['RtnCode', 'TradeID', 'UserID', 'Money'] as $key) {
+            if (array_key_exists($key, $data)) {
+                $columns[$key] = $data[$key];
+            }
+        }
 
         $results = [];
         foreach ($columns as $key => $value) {
