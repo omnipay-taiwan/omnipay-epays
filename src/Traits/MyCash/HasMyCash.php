@@ -1,8 +1,8 @@
 <?php
 
-namespace Omnipay\ePays\Traits\MyCash;
+namespace Omnipay\EPays\Traits\MyCash;
 
-use Omnipay\ePays\Hasher;
+use Omnipay\EPays\Hasher;
 
 trait HasMyCash
 {

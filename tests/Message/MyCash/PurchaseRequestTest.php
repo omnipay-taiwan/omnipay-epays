@@ -1,8 +1,8 @@
 <?php
 
-namespace Omnipay\ePays\Tests\Message\MyCash;
+namespace Omnipay\EPays\Tests\Message\MyCash;
 
-use Omnipay\ePays\Message\MyCash\PurchaseRequest;
+use Omnipay\EPays\Message\MyCash\PurchaseRequest;
 use Omnipay\Tests\TestCase;
 
 class PurchaseRequestTest extends TestCase

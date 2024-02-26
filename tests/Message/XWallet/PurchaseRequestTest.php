@@ -1,10 +1,10 @@
 <?php
 
-namespace Omnipay\ePays\Tests\Message\XWallet;
+namespace Omnipay\EPays\Tests\Message\XWallet;
 
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\Common\Message\RedirectResponseInterface;
-use Omnipay\ePays\Message\XWallet\PurchaseRequest;
+use Omnipay\EPays\Message\XWallet\PurchaseRequest;
 use Omnipay\Tests\TestCase;
 
 class PurchaseRequestTest extends TestCase

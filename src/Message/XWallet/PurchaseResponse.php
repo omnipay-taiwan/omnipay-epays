@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\ePays\Message\XWallet;
+namespace Omnipay\EPays\Message\XWallet;
 
 use Omnipay\Common\Message\RedirectResponseInterface;
 

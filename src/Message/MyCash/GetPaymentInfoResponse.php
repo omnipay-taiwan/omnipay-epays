@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\ePays\Message\MyCash;
+namespace Omnipay\EPays\Message\MyCash;
 
 class GetPaymentInfoResponse extends CompletePurchaseResponse
 {

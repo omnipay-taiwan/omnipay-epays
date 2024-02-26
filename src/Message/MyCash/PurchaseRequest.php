@@ -1,14 +1,14 @@
 <?php
 
-namespace Omnipay\ePays\Message\MyCash;
+namespace Omnipay\EPays\Message\MyCash;
 
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\Common\Message\AbstractRequest;
-use Omnipay\ePays\Traits\MyCash\HasAmount;
-use Omnipay\ePays\Traits\MyCash\HasCreditCard;
-use Omnipay\ePays\Traits\MyCash\HasCVS;
-use Omnipay\ePays\Traits\MyCash\HasDefaults;
-use Omnipay\ePays\Traits\MyCash\HasMyCash;
+use Omnipay\EPays\Traits\MyCash\HasAmount;
+use Omnipay\EPays\Traits\MyCash\HasCreditCard;
+use Omnipay\EPays\Traits\MyCash\HasCVS;
+use Omnipay\EPays\Traits\MyCash\HasDefaults;
+use Omnipay\EPays\Traits\MyCash\HasMyCash;
 
 class PurchaseRequest extends AbstractRequest
 {

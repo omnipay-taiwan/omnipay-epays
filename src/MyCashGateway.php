@@ -1,14 +1,14 @@
 <?php
 
-namespace Omnipay\ePays;
+namespace Omnipay\EPays;
 
 use Omnipay\Common\AbstractGateway;
-use Omnipay\ePays\Message\MyCash\AcceptNotificationRequest;
-use Omnipay\ePays\Message\MyCash\CompletePurchaseRequest;
-use Omnipay\ePays\Message\MyCash\FetchTransactionRequest;
-use Omnipay\ePays\Message\MyCash\GetPaymentInfoRequest;
-use Omnipay\ePays\Message\MyCash\PurchaseRequest;
-use Omnipay\ePays\Traits\MyCash\HasMyCash;
+use Omnipay\EPays\Message\MyCash\AcceptNotificationRequest;
+use Omnipay\EPays\Message\MyCash\CompletePurchaseRequest;
+use Omnipay\EPays\Message\MyCash\FetchTransactionRequest;
+use Omnipay\EPays\Message\MyCash\GetPaymentInfoRequest;
+use Omnipay\EPays\Message\MyCash\PurchaseRequest;
+use Omnipay\EPays\Traits\MyCash\HasMyCash;
 
 /**
  * MyCash Gateway
@@ -19,7 +19,7 @@ class MyCashGateway extends AbstractGateway
 
     public function getName(): string
     {
-        return 'ePays_MyCash';
+        return 'EPays_MyCash';
     }
 
     public function getDefaultParameters(): array

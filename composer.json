@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Omnipay\\ePays\\": "src"
+            "Omnipay\\EPays\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Omnipay\\ePays\\Tests\\": "tests"
+            "Omnipay\\EPays\\Tests\\": "tests"
         }
     },
     "scripts": {

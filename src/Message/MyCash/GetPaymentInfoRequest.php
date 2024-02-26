@@ -1,10 +1,10 @@
 <?php
 
-namespace Omnipay\ePays\Message\MyCash;
+namespace Omnipay\EPays\Message\MyCash;
 
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\Common\Message\AbstractRequest;
-use Omnipay\ePays\Traits\MyCash\HasMyCash;
+use Omnipay\EPays\Traits\MyCash\HasMyCash;
 
 class GetPaymentInfoRequest extends AbstractRequest
 {

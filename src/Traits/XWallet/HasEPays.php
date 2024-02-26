@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\ePays\Traits\XWallet;
+namespace Omnipay\EPays\Traits\XWallet;
 
 trait HasEPays
 {

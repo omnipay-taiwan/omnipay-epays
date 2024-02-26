@@ -1,10 +1,10 @@
 <?php
 
-namespace Omnipay\ePays\Message\XWallet;
+namespace Omnipay\EPays\Message\XWallet;
 
 use Omnipay\Common\Exception\InvalidRequestException;
-use Omnipay\ePays\Encryptor;
-use Omnipay\ePays\Traits\XWallet\HasEPays;
+use Omnipay\EPays\Encryptor;
+use Omnipay\EPays\Traits\XWallet\HasEPays;
 
 class PurchaseRequest extends AbstractRequest
 {

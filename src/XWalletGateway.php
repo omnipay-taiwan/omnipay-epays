@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\ePays;
+namespace Omnipay\EPays;
 
 use Omnipay\Common\AbstractGateway;
-use Omnipay\ePays\Message\XWallet\CompletePurchaseRequest;
-use Omnipay\ePays\Message\XWallet\PurchaseRequest;
-use Omnipay\ePays\Traits\XWallet\HasEPays;
+use Omnipay\EPays\Message\XWallet\CompletePurchaseRequest;
+use Omnipay\EPays\Message\XWallet\PurchaseRequest;
+use Omnipay\EPays\Traits\XWallet\HasEPays;
 
 /**
  * MyCash Gateway
@@ -16,7 +16,7 @@ class XWalletGateway extends AbstractGateway
 
     public function getName(): string
     {
-        return 'ePays_XWallet';
+        return 'EPays_XWallet';
     }
 
     public function getDefaultParameters(): array

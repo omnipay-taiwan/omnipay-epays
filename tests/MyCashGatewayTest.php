@@ -1,9 +1,9 @@
 <?php
 
-namespace Omnipay\ePays\Tests;
+namespace Omnipay\EPays\Tests;
 
 use Omnipay\Common\Message\NotificationInterface;
-use Omnipay\ePays\MyCashGateway;
+use Omnipay\EPays\MyCashGateway;
 use Omnipay\Tests\GatewayTestCase;
 
 class MyCashGatewayTest extends GatewayTestCase

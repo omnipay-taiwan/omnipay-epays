@@ -1,8 +1,8 @@
 <?php
 
-namespace Omnipay\ePays\Tests;
+namespace Omnipay\EPays\Tests;
 
-use Omnipay\ePays\Hasher;
+use Omnipay\EPays\Hasher;
 use PHPUnit\Framework\TestCase;
 
 class HasherTest extends TestCase

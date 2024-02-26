@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\ePays;
+namespace Omnipay\EPays;
 
 class Hasher
 {

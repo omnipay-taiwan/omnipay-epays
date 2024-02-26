@@ -1,9 +1,9 @@
 <?php
 
-namespace Omnipay\ePays\Message\XWallet;
+namespace Omnipay\EPays\Message\XWallet;
 
-use Omnipay\ePays\Encryptor;
-use Omnipay\ePays\Traits\XWallet\HasEPays;
+use Omnipay\EPays\Encryptor;
+use Omnipay\EPays\Traits\XWallet\HasEPays;
 
 class CompletePurchaseRequest extends AbstractRequest
 {

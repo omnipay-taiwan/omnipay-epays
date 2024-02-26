@@ -1,9 +1,9 @@
 <?php
 
-namespace Omnipay\ePays\Tests\Message\XWallet;
+namespace Omnipay\EPays\Tests\Message\XWallet;
 
-use Omnipay\ePays\Encryptor;
-use Omnipay\ePays\Message\XWallet\CompletePurchaseRequest;
+use Omnipay\EPays\Encryptor;
+use Omnipay\EPays\Message\XWallet\CompletePurchaseRequest;
 use Omnipay\Tests\TestCase;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
@@ -49,8 +49,8 @@ class CompletePurchaseRequestTest extends TestCase
             'PriceReal' => 100,
         ]);
         $httpRequest = new HttpRequest([], [], [], [], [], [], json_encode([
-            'state' => '1',
-            'code' => '200',
+            'state' => 1,
+            'code' => 200,
             'msg' => '交易成功',
             'data' => $data,
         ]));

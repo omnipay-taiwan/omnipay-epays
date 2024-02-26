@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\ePays\Tests\Message\MyCash;
+namespace Omnipay\EPays\Tests\Message\MyCash;
 
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\Common\Message\NotificationInterface;
-use Omnipay\ePays\Message\MyCash\AcceptNotificationRequest;
-use Omnipay\ePays\Message\MyCash\CompletePurchaseRequest;
+use Omnipay\EPays\Message\MyCash\AcceptNotificationRequest;
+use Omnipay\EPays\Message\MyCash\CompletePurchaseRequest;
 use Omnipay\Tests\TestCase;
 
 class AcceptNotificationRequestTest extends TestCase

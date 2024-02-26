@@ -1,8 +1,8 @@
 <?php
 
-namespace Omnipay\ePays\Tests;
+namespace Omnipay\EPays\Tests;
 
-use Omnipay\ePays\Encryptor;
+use Omnipay\EPays\Encryptor;
 use PHPUnit\Framework\TestCase;
 
 class EncryptorTest extends TestCase

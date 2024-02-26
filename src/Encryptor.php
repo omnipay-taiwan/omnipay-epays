@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\ePays;
+namespace Omnipay\EPays;
 
 use LengthException;
 use phpseclib3\Crypt\AES;
