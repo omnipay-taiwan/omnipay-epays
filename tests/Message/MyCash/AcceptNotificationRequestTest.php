@@ -2,7 +2,7 @@
 
 namespace Omnipay\EPays\Tests\Message\MyCash;
 
-use Omnipay\Common\Exception\InvalidRequestException;
+use Omnipay\Common\Exception\InvalidResponseException;
 use Omnipay\Common\Message\NotificationInterface;
 use Omnipay\EPays\Message\MyCash\AcceptNotificationRequest;
 use Omnipay\EPays\Message\MyCash\CompletePurchaseRequest;
@@ -18,7 +18,7 @@ class AcceptNotificationRequestTest extends TestCase
 
     public function testValidateFails(): void
     {
-        $this->expectException(InvalidRequestException::class);
+        $this->expectException(InvalidResponseException::class);
 
         $options = [
             'RtnCode' => '1',

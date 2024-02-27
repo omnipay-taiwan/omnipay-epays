@@ -54,8 +54,8 @@ class PurchaseRequestTest extends TestCase
         self::assertEquals('http://xpop-test.epays.com.tw/api/o/new', $response->getRedirectUrl());
         self::assertEquals('POST', $response->getRedirectMethod());
         self::assertEquals([
-            "Hashkey" => "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-            "data" => "u4OlyM8T0QFQPQkL8XhzfxH5QVFmVcYqUW+hXuic5a+y9cIjEY8qr3gOoIUmOZLufZtW/3fDRNP2yQAR2kt4Uaqpq24cR9GTgQBXg5eZDjEzsv4hCE+vXqHdQeNBOe+R",
+            'Hashkey' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'data' => 'u4OlyM8T0QFQPQkL8XhzfxH5QVFmVcYqUW+hXuic5a+y9cIjEY8qr3gOoIUmOZLufZtW/3fDRNP2yQAR2kt4Uaqpq24cR9GTgQBXg5eZDjEzsv4hCE+vXqHdQeNBOe+R',
         ], $response->getRedirectData());
     }
 }
