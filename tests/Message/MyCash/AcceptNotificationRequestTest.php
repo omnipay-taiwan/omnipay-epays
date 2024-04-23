@@ -60,6 +60,7 @@ class AcceptNotificationRequestTest extends TestCase
         $request->initialize($this->initialize);
 
         self::assertEquals('成功', $request->getMessage());
+        self::assertEquals('OK', $request->getReply());
         self::assertEquals('20151202001', $request->getTransactionId());
         self::assertEquals(NotificationInterface::STATUS_COMPLETED, $request->getTransactionStatus());
         self::assertEquals([
@@ -95,6 +96,7 @@ class AcceptNotificationRequestTest extends TestCase
         $request->initialize($this->initialize);
 
         self::assertEquals('成功', $request->getMessage());
+        self::assertEquals('OK', $request->getReply());
         self::assertEquals('20151202001', $request->getTransactionId());
         self::assertEquals(NotificationInterface::STATUS_COMPLETED, $request->getTransactionStatus());
         self::assertEquals([
@@ -130,6 +132,7 @@ class AcceptNotificationRequestTest extends TestCase
         $request->initialize($this->initialize);
 
         self::assertEquals('成功', $request->getMessage());
+        self::assertEquals('OK', $request->getReply());
         self::assertEquals('20151202001', $request->getTransactionId());
         self::assertEquals(NotificationInterface::STATUS_COMPLETED, $request->getTransactionStatus());
         self::assertEquals([
@@ -164,6 +167,7 @@ class AcceptNotificationRequestTest extends TestCase
         $request->initialize($this->initialize);
 
         self::assertEquals('成功', $request->getMessage());
+        self::assertEquals('OK', $request->getReply());
         self::assertEquals('20151202001', $request->getTransactionId());
         self::assertEquals(NotificationInterface::STATUS_COMPLETED, $request->getTransactionStatus());
         self::assertEquals([

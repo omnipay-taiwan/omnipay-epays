@@ -30,11 +30,12 @@ class AcceptNotificationRequestTest extends TestCase
             'data' => $encryptor->encrypt($data),
         ]));
         $httpRequest->setMethod('POST');
-        $notification = new AcceptNotificationRequest($this->getHttpClient(), $httpRequest);
-        $notification->initialize(array_merge($this->initialize, []));
+        $request = new AcceptNotificationRequest($this->getHttpClient(), $httpRequest);
+        $request->initialize(array_merge($this->initialize, []));
 
-        self::assertEquals(NotificationInterface::STATUS_COMPLETED, $notification->getTransactionStatus());
-        self::assertEquals('test202309011123001', $notification->getTransactionId());
-        self::assertEquals('交易成功', $notification->getMessage());
+        self::assertEquals('交易成功', $request->getMessage());
+        self::assertEquals('OK', $request->getReply());
+        self::assertEquals('test202309011123001', $request->getTransactionId());
+        self::assertEquals(NotificationInterface::STATUS_COMPLETED, $request->getTransactionStatus());
     }
 }
