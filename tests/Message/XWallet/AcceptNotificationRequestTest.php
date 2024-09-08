@@ -38,6 +38,4 @@ class AcceptNotificationRequestTest extends TestCase
         self::assertEquals('test202309011123001', $request->getTransactionId());
         self::assertEquals(NotificationInterface::STATUS_COMPLETED, $request->getTransactionStatus());
     }
-
-
 }

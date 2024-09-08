@@ -2,10 +2,22 @@
 
 namespace Omnipay\EPays\Message\XWallet;
 
+use Omnipay\Common\Exception\InvalidResponseException;
 use Omnipay\Common\Message\NotificationInterface;
+use Omnipay\EPays\Traits\XWallet\HasEPays;
 
-class AcceptNotificationRequest extends CompletePurchaseRequest implements NotificationInterface
+class AcceptNotificationRequest extends AbstractRequest implements NotificationInterface
 {
+    use HasEPays;
+
+    /**
+     * @throws InvalidResponseException
+     */
+    public function getData()
+    {
+        return $this->decrypt();
+    }
+
     /**
      * @param  array  $data
      * @return AcceptNotificationResponse

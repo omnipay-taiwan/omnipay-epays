@@ -6,7 +6,7 @@ class GetPaymentInfoResponse extends AbstractResponse
 {
     public function isSuccessful()
     {
-        return (int) $this->getCode() === 201;
+        return false;
     }
 
     public function getCode()

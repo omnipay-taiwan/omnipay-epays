@@ -2,8 +2,21 @@
 
 namespace Omnipay\EPays\Message\XWallet;
 
-class GetPaymentInfoRequest extends CompletePurchaseRequest
+use Omnipay\Common\Exception\InvalidResponseException;
+use Omnipay\EPays\Traits\XWallet\HasEPays;
+
+class GetPaymentInfoRequest extends AbstractRequest
 {
+    use HasEPays;
+
+    /**
+     * @throws InvalidResponseException
+     */
+    public function getData()
+    {
+        return $this->decrypt();
+    }
+
     /**
      * @param  array  $data
      * @return GetPaymentInfoResponse

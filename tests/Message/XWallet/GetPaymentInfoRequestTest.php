@@ -34,7 +34,7 @@ class GetPaymentInfoRequestTest extends TestCase
         $request->initialize(array_merge($this->initialize, []));
         $response = $request->send();
 
-        self::assertTrue($response->isSuccessful());
+        self::assertFalse($response->isSuccessful());
         self::assertEquals('繳費代碼或帳號取得成功', $response->getMessage());
         self::assertEquals('test202309011123001', $response->getTransactionId());
     }
@@ -59,7 +59,7 @@ class GetPaymentInfoRequestTest extends TestCase
         $request->initialize(array_merge($this->initialize, []));
         $response = $request->send();
 
-        self::assertTrue($response->isSuccessful());
+        self::assertFalse($response->isSuccessful());
         self::assertEquals('繳費代碼或帳號取得成功', $response->getMessage());
         self::assertEquals('test202309011123001', $response->getTransactionId());
     }

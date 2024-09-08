@@ -4,7 +4,6 @@ namespace Omnipay\EPays;
 
 use Omnipay\Common\AbstractGateway;
 use Omnipay\EPays\Message\XWallet\AcceptNotificationRequest;
-use Omnipay\EPays\Message\XWallet\CompletePurchaseRequest;
 use Omnipay\EPays\Message\XWallet\GetPaymentInfoRequest;
 use Omnipay\EPays\Message\XWallet\PurchaseRequest;
 use Omnipay\EPays\Traits\XWallet\HasEPays;
@@ -33,11 +32,6 @@ class XWalletGateway extends AbstractGateway
     public function purchase(array $options = [])
     {
         return $this->createRequest(PurchaseRequest::class, $options);
-    }
-
-    public function completePurchase(array $options = [])
-    {
-        return $this->createRequest(CompletePurchaseRequest::class, $options);
     }
 
     public function acceptNotification(array $options = [])
