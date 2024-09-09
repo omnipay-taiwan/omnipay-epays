@@ -23,7 +23,7 @@ class AcceptNotificationResponse extends AbstractResponse implements Notificatio
 
     public function getTransactionId()
     {
-        return $this->data['data']['FirmOrderNo'];
+        return $this->data['FirmOrderNo'];
     }
 
     /**

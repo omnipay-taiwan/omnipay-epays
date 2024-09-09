@@ -24,10 +24,11 @@ class GetPaymentInfoRequestTest extends TestCase
             'PriceReal' => 100,
         ];
         $httpRequest = new HttpRequest([], [], [], [], [], [], json_encode([
-            'state' => '1',
-            'code' => '201',
+            'state' => 1,
+            'code' => 201,
             'msg' => '繳費代碼或帳號取得成功',
             'data' => $encryptor->encrypt($data),
+            'FirmOrderNo' => 'test202309011123001',
         ]));
         $httpRequest->setMethod('POST');
         $request = new GetPaymentInfoRequest($this->getHttpClient(), $httpRequest);
@@ -49,10 +50,11 @@ class GetPaymentInfoRequestTest extends TestCase
             'PriceReal' => 100,
         ];
         $httpRequest = new HttpRequest([], [], [], [], [], [], json_encode([
-            'state' => '1',
-            'code' => '201',
+            'state' => 1,
+            'code' => 201,
             'msg' => '繳費代碼或帳號取得成功',
             'data' => $encryptor->encrypt($data),
+            'FirmOrderNo' => 'test202309011123001',
         ]));
         $httpRequest->setMethod('POST');
         $request = new GetPaymentInfoRequest($this->getHttpClient(), $httpRequest);

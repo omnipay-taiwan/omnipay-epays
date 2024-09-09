@@ -24,10 +24,11 @@ class AcceptNotificationRequestTest extends TestCase
             'PriceReal' => 100,
         ];
         $httpRequest = new HttpRequest([], [], [], [], [], [], json_encode([
-            'state' => '1',
-            'code' => '200',
+            'state' => 1,
+            'code' => 200,
             'msg' => '交易成功',
             'data' => $encryptor->encrypt($data),
+            'FirmOrderNo' => 'test202309011123001',
         ]));
         $httpRequest->setMethod('POST');
         $request = new AcceptNotificationRequest($this->getHttpClient(), $httpRequest);

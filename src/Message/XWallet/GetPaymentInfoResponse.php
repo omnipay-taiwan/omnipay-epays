@@ -21,6 +21,6 @@ class GetPaymentInfoResponse extends AbstractResponse
 
     public function getTransactionId()
     {
-        return $this->data['data']['FirmOrderNo'];
+        return $this->data['FirmOrderNo'];
     }
 }
