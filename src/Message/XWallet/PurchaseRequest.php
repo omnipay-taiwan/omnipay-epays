@@ -35,7 +35,7 @@ class PurchaseRequest extends AbstractRequest
      */
     public function setPayType($value)
     {
-        return $this->setParameter('PayType', $value);
+        return $this->setPaymentMethod($value);
     }
 
     /**
@@ -43,7 +43,7 @@ class PurchaseRequest extends AbstractRequest
      */
     public function getPayType()
     {
-        return $this->getParameter('PayType');
+        return $this->getPaymentMethod();
     }
 
     /**
@@ -91,7 +91,7 @@ class PurchaseRequest extends AbstractRequest
     {
         return [
             'FirmOrderNo' => $this->getTransactionId(),
-            'PayType' => (int) $this->getPayType() ?: 1,
+            'PayType' => (int) $this->getPaymentMethod() ?: 1,
             'Price' => (int) $this->getAmount(),
             'Mobile' => $this->getMobile(),
         ];
