@@ -24,6 +24,7 @@ class PurchaseRequestTest extends TestCase
             'transactionId' => 'test202309011123001',
             'amount' => 100,
             'PayType' => 1,
+            'PayMode' => 4,
             'Mobile' => '0912345678',
         ];
         $request = new PurchaseRequest($this->getHttpClient(), $this->getHttpRequest());
@@ -32,6 +33,7 @@ class PurchaseRequestTest extends TestCase
         self::assertEquals([
             'FirmOrderNo' => 'test202309011123001',
             'PayType' => 1,
+            'PayMode' => 4,
             'Price' => 100,
             'Mobile' => '0912345678',
         ], $request->getData());
@@ -43,6 +45,7 @@ class PurchaseRequestTest extends TestCase
             'transactionId' => 'test202309011123001',
             'amount' => 100,
             'PayType' => 1,
+            'PayMode' => 4,
             'Mobile' => '0912345678',
         ];
         $request = new PurchaseRequest($this->getHttpClient(), $this->getHttpRequest());
@@ -55,7 +58,7 @@ class PurchaseRequestTest extends TestCase
         self::assertEquals('POST', $response->getRedirectMethod());
         self::assertEquals([
             'Hashkey' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-            'data' => 'u4OlyM8T0QFQPQkL8XhzfxH5QVFmVcYqUW+hXuic5a+y9cIjEY8qr3gOoIUmOZLufZtW/3fDRNP2yQAR2kt4Uaqpq24cR9GTgQBXg5eZDjEzsv4hCE+vXqHdQeNBOe+R',
+            'data' => 'u4OlyM8T0QFQPQkL8XhzfxH5QVFmVcYqUW+hXuic5a+y9cIjEY8qr3gOoIUmOZLuxQ/kHvhMtvcaw2MdnEAgcJfL2SjqVkp3B1MtO3w4yDKWmAMbaYfTxuP2O3T8d4qa',
         ], $response->getRedirectData());
     }
 }

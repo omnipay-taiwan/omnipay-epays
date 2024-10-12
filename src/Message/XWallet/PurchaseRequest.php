@@ -92,6 +92,7 @@ class PurchaseRequest extends AbstractRequest
         return [
             'FirmOrderNo' => $this->getTransactionId(),
             'PayType' => (int) $this->getPaymentMethod() ?: 1,
+            'PayMode' => (int) $this->getPayMode() ?: 1,
             'Price' => (int) $this->getAmount(),
             'Mobile' => $this->getMobile(),
         ];

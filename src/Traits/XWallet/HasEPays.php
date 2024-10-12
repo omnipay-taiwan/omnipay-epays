@@ -29,6 +29,24 @@ trait HasEPays
     }
 
     /**
+     * 購買模式：1.點數卡、4.模式A、5.模式B
+     *
+     * @param  int  $value
+     */
+    public function setPayMode($value)
+    {
+        return $this->setParameter('PayMode', $value);
+    }
+
+    /**
+     * @return ?int
+     */
+    public function getPayMode()
+    {
+        return $this->getParameter('PayMode');
+    }
+
+    /**
      * @throws InvalidResponseException
      */
     protected function decrypt()
