@@ -24,6 +24,11 @@ class Encryptor
         return base64_encode($this->cipher->encrypt(json_encode($data)));
     }
 
+    public function decrypt($plainText)
+    {
+        return json_decode($this->cipher->decrypt(base64_decode($plainText)), true);
+    }
+
     private function padding($key)
     {
         return str_pad($key, self::getKeySize($key), "\0");
@@ -42,12 +47,5 @@ class Encryptor
         throw new LengthException(
             'Key of size '.$length.' not supported by this algorithm. Only keys of sizes 128, 192 or 256 supported'
         );
-    }
-
-    public function decrypt($plainText)
-    {
-        return json_decode($this->cipher->decrypt(
-            base64_decode($plainText)
-        ), true);
     }
 }
