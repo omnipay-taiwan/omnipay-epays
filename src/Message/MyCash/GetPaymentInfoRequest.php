@@ -18,8 +18,7 @@ class GetPaymentInfoRequest extends AbstractRequest
     public function getData()
     {
         $data = $this->httpRequest->request->all();
-
-        if (! hash_equals($this->httpRequest->request->get('Validate'), $this->makeHash($data))) {
+        if (! hash_equals($this->makeHash($data), $this->httpRequest->request->get('Validate', ''))) {
             throw new InvalidResponseException('Incorrect hash');
         }
 
